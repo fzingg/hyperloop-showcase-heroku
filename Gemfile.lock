@@ -68,6 +68,7 @@ GEM
     ffi (1.9.17)
     foreman (0.83.0)
       thor (~> 0.19.1)
+    get_process_mem (0.2.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -131,10 +132,11 @@ GEM
       sprockets (~> 3.0)
       tilt (>= 1.4)
     paggio (0.2.6)
-    passenger (5.1.2)
-      rack
-      rake (>= 0.8.1)
     pg (0.18.4)
+    puma (3.7.0)
+    puma_worker_killer (0.0.7)
+      get_process_mem (~> 0.2)
+      puma (>= 2.7, < 4)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -232,8 +234,9 @@ DEPENDENCIES
   opal-browser (= 0.2.0)
   opal-rails (= 0.9.1)
   opal_hot_reloader!
-  passenger
   pg (= 0.18.4)
+  puma (= 3.7.0)
+  puma_worker_killer
   rails (~> 5.0.1)
   react-rails (= 1.4.2)
   sass-rails (~> 5.0)
