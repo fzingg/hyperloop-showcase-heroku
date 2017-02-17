@@ -327,3 +327,106 @@ npm install webpack -g
 /node_modules
 ```
 
+```
+// webpack.config.js
+
+var path = require("path");
+
+module.exports = {
+    context: __dirname,
+    entry: {
+      client_only:  "./webpack/client_only.js",
+      client_and_server: "./webpack/client_and_server.js"
+    },
+    output: {
+      path: path.join(__dirname, 'app', 'assets',   'javascripts', 'webpack'),
+      filename: "[name].js",
+      publicPath: "/webpack/"
+    },
+    module: {
+      loaders: [
+        // add any loaders here
+      ]
+    },
+    resolve: {
+    modules: [
+    path.join(__dirname, "src"),
+    "node_modules"
+    ]
+    },
+};
+```
+
+```javascript
+// webpack/client_only.js
+
+// any packages that depend specifically on the DOM go here
+// for example the Webpack CSS loader generates code that will break prerendering
+console.log('client_only.js loaded');
+```
+
+```javascript
+// webpack/client_and_server.js
+
+// all other packages that you can run on both server (prerendering) and client go here
+// most well behaved packages can be required here
+console.log('client_and_server.js loaded');
+```
+
+```
+webpack
+```
+
+```javascript
+// app/assets/javascripts/application.js
+
+//= require 'components'
+//= require 'react_ujs'
+//= require 'jquery'
+//= require 'jquery_ujs'
+//= require 'webpack/client_only'
+//= require 'turbolinks'
+//= require_tree .
+
+Opal.load('components');
+```
+
+```ruby
+#app/views/components.rb
+
+require 'opal'
+
+require 'hyper-react'
+require 'webpack/client_and_server.js'
+require 'reactrb/auto-import'
+if React::IsomorphicHelpers.on_opal_client?
+  require 'opal-jquery'
+  require 'browser'
+  require 'browser/interval'
+  require 'browser/delay'
+  # add any additional requires that can ONLY run on client here
+end
+
+require 'hyper-mesh'
+require 'models'
+
+require_tree './components'
+```
+
+```
+npm install react --save 
+npm install react-dom --save
+
+```
+
+```javascript
+// webpack/client_and_server.js
+
+ReactDOM = require('react-dom')
+React = require('react')
+console.log('client_and_server.js loaded');
+```
+
+```
+webpack
+```
