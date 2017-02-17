@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   #mount HyperMesh::Engine => '/rr'
-  root 'home#show'
+  root 'home#test'
 
 
   # Example of regular route:
