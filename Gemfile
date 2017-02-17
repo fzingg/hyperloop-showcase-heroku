@@ -1,40 +1,36 @@
 source 'https://rubygems.org'
-ruby '2.2.5'
+ruby '2.3.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
-# Use postgresql as the database for Active Record
-gem 'pg'
-gem 'rails_12factor', group: :production
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.3'
-# Use Uglifier as compressor for JavaScript assets
+gem 'rails', '~> 5.0.1'
+gem 'puma', '3.6.2'
+gem "puma_worker_killer"
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
-# Use jquery as the JavaScript library
+gem 'coffee-rails', '~> 4.2'
+gem 'pg', '0.18.4'
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'turbolinks', '~> 5'
+gem 'jbuilder', '~> 2.5'
+gem 'react-rails', '1.4.2'
+gem 'hyper-rails', '0.4.1'
+gem 'opal-rails', '0.9.1'
+gem 'opal-browser', '0.2.0'
+gem 'hyper-react', '0.11.0'
+gem 'hyper-mesh', '0.5.3'
+gem 'hyper-router', '2.4.0'
+gem 'therubyracer', platforms: :ruby
+gem 'opal_hot_reloader', git: 'https://github.com/fkchang/opal-hot-reloader.git'
+gem 'foreman'
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :development, :test do
+  gem 'byebug', platform: :mri
+end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :development do
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '~> 3.0.5'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+end
 
-gem 'puma'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

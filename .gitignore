@@ -17,3 +17,9 @@
 
 # Ignore ruby-version
 /.ruby-version
+
+/node_modules
+
+/public/system
+/backup/vendor/bundle/ruby
+/vendor/bundle/ruby
