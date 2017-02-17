@@ -1,9 +1,6 @@
 class HomeController < ApplicationController
     def show
-        render_component
+        render_component(no_prerender: true)
     end
 
-    def test
-    	
-    end
 end
