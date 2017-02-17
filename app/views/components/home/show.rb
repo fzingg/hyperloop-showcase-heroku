@@ -11,7 +11,7 @@ module Components
           ReactBootstrap::Navbar(bsStyle: :inverse) do
             ReactBootstrap::Nav() do
               ReactBootstrap::NavbarBrand() do
-                a(href: '#') { 'Hyperloop Showcase' }
+                a(href: '') { 'HyperLoop Showcase' }
               end
               ReactBootstrap::NavDropdown(
                 eventKey: 1,
@@ -29,7 +29,10 @@ module Components
               end
             end
           end
-          
+          div.container do
+            
+            PlaneventsList()
+          end
         end
       end
     end
