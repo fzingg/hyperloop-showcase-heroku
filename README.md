@@ -429,4 +429,27 @@ console.log('client_and_server.js loaded');
 
 ```
 webpack
+
+heroku local web
+git add .
+git commit -m "Demo"
+git push heroku master
+heroku open
+```
+
+```
+npm install react-player --save
+```
+
+```javascript
+//webpack/client_and_server.js
+
+ReactDOM = require('react-dom')
+React = require('react')
+console.log('client_and_server.js loaded');
+ReactPlayer = require('react-player')
+```
+
+```
+webpack
 ```

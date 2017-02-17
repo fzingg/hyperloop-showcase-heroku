@@ -32,8 +32,10 @@ module Components
       end
 
       def render
-        div do
-          "Home::Show"
+       div do
+          ReactPlayer(url:  'https://www.youtube.com/embed/FzCsDVfPQqk',
+            playing: true
+          )
         end
       end
     end
