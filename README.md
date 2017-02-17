@@ -63,8 +63,8 @@ The initial HEROKU app is coming with a Rails 4.x version. We are going to upgra
 
 		gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ```
-```
-config/environments/development.rb
+```ruby
+#config/environments/development.rb
 
 		Rails.application.configure do
 			    
@@ -94,8 +94,8 @@ config/environments/development.rb
 			  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 		end
 ```
-```
-config/environments/production.rb
+```ruby
+#config/environments/production.rb
 
 		Rails.application.configure do
 			  
@@ -129,8 +129,8 @@ heroku local web
 ```
 browse http://localhost:5000
 
-```
-config/database.yml
+```yml
+#config/database.yml
 
 	development:
 	  <<: *default
@@ -149,8 +149,8 @@ git commit -m "Demo"
 git push heroku master
 heroku open
 ```
-```
-app/assets/javascripts/application.js
+```javascript
+//app/assets/javascripts/application.js
 
 		//= require 'components'
 		//= require 'react_ujs'
@@ -162,8 +162,8 @@ app/assets/javascripts/application.js
 
 		Opal.load('components');
 ```
-```
-app/views/components.rb
+```ruby
+#app/views/components.rb
 
 		require 'opal'
 		require 'hyper-react'
@@ -192,12 +192,12 @@ git commit -m "Demo"
 git push heroku master
 heroku open
 ```
-```
-config/routes.rb
+```ruby
+#config/routes.rb
 
 		root 'home#show'
 ```
-```
+```ruby
 #app/controllers/home_controller.rb
 
 		class HomeController < ApplicationController
