@@ -124,20 +124,6 @@ The initial HEROKU app is coming with a Rails 4.x version. We are going to upgra
 ```
 
 ```
-#config/puma.rb
-
-	workers Integer(ENV['WEB_CONCURRENCY'] || 2)
-	threads_count = Integer(ENV['MAX_THREADS'] || 5)
-	threads threads_count, threads_count
-
-	preload_app!
-
-	rackup      DefaultRackup
-	port        ENV['PORT']     || 3000
-	environment ENV['RACK_ENV'] || 'development'
-```
-
-```
 rm Gemfile.lock
 bundle install
 heroku local web
@@ -159,7 +145,6 @@ heroku local web
 ```
 browse http://localhost:5000
 ```
-heroku config:set MIN_THREADS=1 RAILS_MAX_THREADS=1
 git add .
 git commit -m "Demo"
 git push heroku master
@@ -218,9 +203,13 @@ heroku open
 
 		class HomeController < ApplicationController
 		    def show
-			render_component
 		    end
 		end
+```
+```ruby
+#app/views/home/show.html.erb
+
+<%= react_component 'Home::Show', {}, { prerender: false } %>
 ```
 ```
 heroku local web
@@ -324,5 +313,17 @@ git commit -m "Demo"
 git push heroku master
 heroku open
 
+```
+
+```
+npm init
+npm install webpack --save-dev
+npm install webpack -g
+```
+
+```
+#/.gitignore
+
+/node_modules
 ```
 
