@@ -2,10 +2,15 @@
 
 ### INTRODUCTION
 
-This tutorial is an attempt to achieve a complete working deployment of the **Hyperloop showcase** on a **HEROKU** Server.
+This tutorial is a very detailed list of commands and files modification to achieve a complete working deployment of the **Hyperloop showcase** on a **HEROKU** Server.
+
+Of course the **HEROKU** deployment can be faster but this tutorial allows programmer to check step by step where an error could happen.
+
+The final **HEROKU** online result is here : [https://damp-harbor-10403.herokuapp.com](https://damp-harbor-10403.herokuapp.com)
 
 The **Hyperloop showcase** has already been deployed successfully on a classic independant VPS (Rails 5.01, Capistrano and Passenger) :
 [http://http://hyperloop-showcase.pixagency.com](http://hyperloop-showcase.pixagency.com)
+
 
 ### DEPLOYING TUTORIAL
 
