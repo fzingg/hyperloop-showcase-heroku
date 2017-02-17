@@ -16,7 +16,7 @@ gem 'hyper-rails', '0.4.1'
 gem 'opal-rails', '0.9.1'
 gem 'opal-browser', '0.2.0'
 gem 'hyper-react', '0.11.0'
-gem 'hyper-mesh', '0.5.3'
+#gem 'hyper-mesh', '0.5.3'
 gem 'hyper-router', '2.4.0'
 gem 'therubyracer', platforms: :ruby
 gem 'opal_hot_reloader', git: 'https://github.com/fkchang/opal-hot-reloader.git'
