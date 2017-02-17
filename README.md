@@ -831,3 +831,20 @@ git commit -m "Demo"
 git push heroku master
 heroku open
 ```
+
+
+```ruby
+#config/initializers/hyper_mesh.rb
+
+HyperMesh.configuration do |config|
+  config.transport = :simple_poller
+end
+```
+
+```
+heroku local web
+git add .
+git commit -m "Demo"
+git push heroku master
+heroku open
+```
