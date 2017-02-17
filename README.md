@@ -31,7 +31,7 @@ The initial HEROKU app is coming with a Rails 4.x version. We are going to upgra
 		ruby '2.3.1'
 
 		gem 'rails', '~> 5.0.1'
-		gem 'puma', '3.6.2'
+		gem 'puma', '3.7.0'
 		gem "puma_worker_killer"
 		gem 'sass-rails', '~> 5.0'
 		gem 'uglifier', '>= 1.3.0'
@@ -122,6 +122,21 @@ The initial HEROKU app is coming with a Rails 4.x version. We are going to upgra
 			  config.active_record.dump_schema_after_migration = false
 		end
 ```
+
+```
+#config/puma.rb
+
+	workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+	threads_count = Integer(ENV['MAX_THREADS'] || 5)
+	threads threads_count, threads_count
+
+	preload_app!
+
+	rackup      DefaultRackup
+	port        ENV['PORT']     || 3000
+	environment ENV['RACK_ENV'] || 'development'
+```
+
 ```
 rm Gemfile.lock
 bundle install
@@ -144,6 +159,7 @@ heroku local web
 ```
 browse http://localhost:5000
 ```
+heroku config:set MIN_THREADS=1 RAILS_MAX_THREADS=1
 git add .
 git commit -m "Demo"
 git push heroku master
@@ -218,11 +234,91 @@ heroku open
 ```
 
 ```
-2017-02-17T11:36:20.452380+00:00 heroku[web.1]: Process running mem=708M(138.3%)
-2017-02-17T11:36:20.452461+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2017-02-17T11:36:42.220977+00:00 heroku[web.1]: Process running mem=772M(150.8%)
-2017-02-17T11:36:42.221193+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2017-02-17T11:36:43.578328+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=GET path="/" host=damp-harbor-10403.herokuapp.com request_id=6f69fef0-f657-4134-8097-bcd9b422a0a8 fwd="109.51.219.142" dyno=web.1 connect=1ms service=30000ms status=503 bytes=0
-2017-02-17T11:36:45.165809+00:00 app[web.1]: [4] ! Terminating timed out worker: 6
+#Gemfile
+
+	gem 'hyper-mesh', '0.5.3'
+```
+
+```
+bundle update
+```
+
+```
+#app/views/components.rb
+
+	require 'opal'
+
+	require 'reactrb/auto-import'
+	require 'react/react-source'
+	require 'hyper-react'
+	if React::IsomorphicHelpers.on_opal_client?
+	  require 'opal-jquery'
+	  require 'browser'
+	  require 'browser/interval'
+	  require 'browser/delay'
+	  # add any additional requires that can ONLY run on client here
+	end
+
+	require 'hyper-mesh'
+	require 'models'
+
+	require_tree './components'
+```
+
+```
+#config/application.rb
+	...
+	  class Application < Rails::Application
+	    # Settings in config/environments/* take precedence over those specified here.
+	    # Application configuration should go into files in config/initializers
+	    # -- all .rb files in that directory are automatically loaded.
+	    config.eager_load_paths += %W(#{config.root}/app/models/public)
+	    config.autoload_paths += %W(#{config.root}/app/models/public)
+	    config.assets.paths << ::Rails.root.join('app', 'models').to_s
+	  end
+	...
+```
+
+```
+#routes.rb
+
+mount HyperMesh::Engine => '/rr'
+root 'home#show'
+```
+
+```
+#app/models/models.rb
+
+require_tree './public' if RUBY_ENGINE == 'opal'
+```
+
+```
+#app/models/public/application_record.rb
+
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
+end
+```
+
+```
+#app/policies/application_policy.rb
+
+    # Policies regulate access to your public models
+    # The following policy will open up full access (but only in development)
+    # The policy system is very flexible and powerful.  See the documentation
+    # for complete details.
+    class ApplicationPolicy
+      # Allow any session to connect:
+      always_allow_connection
+      # Send all attributes from all public models
+      regulate_all_broadcasts { |policy| policy.send_all }
+      # Allow all changes to public models
+      allow_change(to: :all, on: [:create, :update, :destroy]) { true }
+    end 
+```
+
+```
+heroku local web
+
 
 ```
