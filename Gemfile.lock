@@ -133,7 +133,7 @@ GEM
       tilt (>= 1.4)
     paggio (0.2.6)
     pg (0.18.4)
-    puma (3.6.2)
+    puma (3.7.0)
     puma_worker_killer (0.0.7)
       get_process_mem (~> 0.2)
       puma (>= 2.7, < 4)
@@ -235,7 +235,7 @@ DEPENDENCIES
   opal-rails (= 0.9.1)
   opal_hot_reloader!
   pg (= 0.18.4)
-  puma (= 3.6.2)
+  puma (= 3.7.0)
   puma_worker_killer
   rails (~> 5.0.1)
   react-rails (= 1.4.2)
