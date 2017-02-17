@@ -4,7 +4,7 @@
 
 This tutorial is a very detailed list of commands and files modification to achieve a complete working deployment of the **Hyperloop showcase** on a **HEROKU** Server.
 
-Of course the **HEROKU** deployment can be faster but this tutorial allows programmer to check step by step where an error could happen.
+Of course the **HEROKU** deployment can be faster but this tutorial allows programmers to check step by step where an error could happen.
 
 The final **HEROKU** online result is here : [https://damp-harbor-10403.herokuapp.com](https://damp-harbor-10403.herokuapp.com)
 
@@ -722,7 +722,7 @@ module Components
 end
 ```
 
-```
+```ruby
 #app/views/components/home/planeventslist.rb
 
 module Components
