@@ -1,7 +1,5 @@
 require 'opal'
 
-
-
 require 'hyper-react'
 require 'react/react-source'
 require 'reactrb/auto-import'
