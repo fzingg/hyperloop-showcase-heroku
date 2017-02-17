@@ -669,6 +669,7 @@ end
 rails db:migrate
 mv app/models/planevent.rb app/models/public
 mv app/models/application_record.rb app/models/public
+heroku run rake --trace db:migrate
 ```
 
 ```ruby
@@ -821,4 +822,12 @@ module Components
     end
   end
 end
+```
+
+```
+heroku local web
+git add .
+git commit -m "Demo"
+git push heroku master
+heroku open
 ```
