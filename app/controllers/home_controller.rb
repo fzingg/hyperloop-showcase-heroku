@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
     def show
-        render_component(no_prerender: true)
+        render_component 'Home::Show', {}, { prerender: false } 
     end
 
 end
