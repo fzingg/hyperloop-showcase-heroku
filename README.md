@@ -453,3 +453,178 @@ ReactPlayer = require('react-player')
 ```
 webpack
 ```
+
+```ruby
+#app/views/components/home/show.rb
+
+def render
+  div do
+    ReactPlayer(url:  'https://www.youtube.com/embed/FzCsDVfPQqk',
+      playing: true
+    )
+  end
+end
+```
+
+```
+heroku local web
+git add .
+git commit -m "Demo"
+git push heroku master
+heroku open
+```
+
+```
+npm install bootstrap react-bootstrap --save
+```
+
+```javascript
+//webpack/client_and_server.js
+
+ReactDOM = require('react-dom')
+React = require('react')
+console.log('client_and_server.js loaded');
+ReactPlayer = require('react-player')
+ReactBootstrap = require('react-bootstrap')
+```
+
+```
+webpack
+```
+
+```ruby
+#app/views/components/home/show.rb
+
+  def render
+    ReactBootstrap::Button(bsStyle: 'success', bsSize: "small") do
+      'Success'
+    end.on(:click) do
+      alert('you clicked me!')
+    end
+  end
+
+```
+
+```
+heroku local web
+git add .
+git commit -m "Demo"
+git push heroku master
+heroku open
+```
+
+```
+npm install css-loader file-loader style-loader url-loader --save-dev
+```
+
+```javascript
+// webpack.config.js
+
+var path = require("path");
+
+module.exports = {
+    context: __dirname,
+    entry: {
+      client_only:  "./webpack/client_only.js",
+      client_and_server: "./webpack/client_and_server.js"
+    },
+    output: {
+      path: path.join(__dirname, 'app', 'assets',   'javascripts', 'webpack'),
+      filename: "[name].js",
+      publicPath: "/webpack/"
+    },
+    module: {
+      rules: [
+      { test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          }
+        ]
+      },
+      { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+      },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader'
+      },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+      }
+    ]
+    },
+    resolve: {
+	modules: [
+	path.join(__dirname, "src"),
+	"node_modules"
+	]
+	},
+};
+```
+
+```javascript
+//webpack/client_only.js
+
+require('bootstrap/dist/css/bootstrap.css');
+```
+
+```
+npm install bootstrap --save
+webpack
+```
+
+```ruby
+#app/views/components/home/show.rb
+
+module Components
+  module Home
+    class Show < React::Component::Base
+
+      def say_hello(i)
+        alert "Hello from number #{i}"
+      end
+
+      def render
+        div do
+          ReactBootstrap::Navbar(bsStyle: :inverse) do
+            ReactBootstrap::Nav() do
+              ReactBootstrap::NavbarBrand() do
+                a(href: '#') { 'Hyperloop Showcase' }
+              end
+              ReactBootstrap::NavDropdown(
+                eventKey: 1,
+                title: 'Things',
+                id: :drop_down
+              ) do
+                (1..5).each do |n|
+                  ReactBootstrap::MenuItem(href: '#',
+                    key: n,
+                    eventKey: "1.#{n}"
+                  ) do
+                    "Number #{n}"
+                  end.on(:click) { say_hello(n) }
+                end
+              end
+            end
+          end
+          
+        end
+      end
+    end
+  end
+end
+```
+
+```
+heroku local web
+git add .
+git commit -m "Demo"
+git push heroku master
+heroku open
+```

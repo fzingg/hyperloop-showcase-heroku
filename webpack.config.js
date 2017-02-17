@@ -14,14 +14,35 @@ module.exports = {
       publicPath: "/webpack/"
     },
     module: {
-      loaders: [
-        // add any loaders here
-      ]
-    },
-    resolve: {
-    modules: [
-    path.join(__dirname, "src"),
-    "node_modules"
+      rules: [
+      { test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          }
+        ]
+      },
+      { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+      },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader'
+      },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+      }
     ]
     },
+    resolve: {
+  modules: [
+  path.join(__dirname, "src"),
+  "node_modules"
+  ]
+  },
 };
