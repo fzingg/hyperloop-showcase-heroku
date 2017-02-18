@@ -133,7 +133,9 @@ rm Gemfile.lock
 bundle install
 heroku local web
 ```
-browse http://localhost:5000
+Browse http://localhost:5000
+
+#### Update database config file
 
 ```yml
 #config/database.yml
@@ -148,13 +150,18 @@ browse http://localhost:5000
 bundle exec rake db:create db:migrate
 heroku local web
 ```
-browse http://localhost:5000
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
 ```
 git add .
 git commit -m "Demo"
 git push heroku master
 heroku open
 ```
+
+#### Implement a React Component
+
 ```javascript
 //app/assets/javascripts/application.js
 
@@ -188,16 +195,6 @@ heroku open
 ```
 rails g hyperloop:component Home::Show
 ```
-```
-heroku local web
-```
-browse http://localhost:5000
-```
-git add .
-git commit -m "Demo"
-git push heroku master
-heroku open
-```
 ```ruby
 #config/routes.rb
 
@@ -219,13 +216,18 @@ heroku open
 ```
 heroku local web
 ```
-browse http://localhost:5000
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
+
 ```
 git add .
 git commit -m "Demo"
 git push heroku master
 heroku open
 ```
+
+#### HYPERMESH Setup
 
 ```
 #Gemfile
@@ -313,12 +315,19 @@ end
 
 ```
 heroku local web
+```
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
+```
 git add .
 git commit -m "Demo"
 git push heroku master
 heroku open
 
 ```
+
+#### WEBPACK Setup
 
 ```
 npm init
@@ -434,13 +443,24 @@ console.log('client_and_server.js loaded');
 
 ```
 webpack
+```
 
+```
 heroku local web
+```
+
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
+
+```
 git add .
 git commit -m "Demo"
 git push heroku master
 heroku open
 ```
+
+#### Reactplayer Component Config
 
 ```
 npm install react-player --save
@@ -473,11 +493,20 @@ end
 
 ```
 heroku local web
+```
+
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
+
+```
 git add .
 git commit -m "Demo"
 git push heroku master
 heroku open
 ```
+
+#### React Bootsptrap config
 
 ```
 npm install bootstrap react-bootstrap --save
@@ -512,11 +541,19 @@ webpack
 
 ```
 heroku local web
+```
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
+
+```
 git add .
 git commit -m "Demo"
 git push heroku master
 heroku open
 ```
+
+#### React BootstrapCSS setup
 
 ```
 npm install css-loader file-loader style-loader url-loader --save-dev
@@ -628,11 +665,19 @@ end
 
 ```
 heroku local web
+```
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
+
+```
 git add .
 git commit -m "Demo"
 git push heroku master
 heroku open
 ```
+
+#### Bootswatch setup
 
 ```
 npm install bootswatch
@@ -651,6 +696,22 @@ require('bootswatch/superhero/bootstrap.min.css');
 ```
 webpack
 ```
+
+```
+heroku local web
+```
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
+
+```
+git add .
+git commit -m "Demo"
+git push heroku master
+heroku open
+```
+
+#### HyperMesh ActiveRecord model
 
 ```
 rails g model Planevent
@@ -831,12 +892,19 @@ end
 
 ```
 heroku local web
+```
+
+Browse http://localhost:5000
+
+#### Push and test HEROKU server
+
+```
 git add .
 git commit -m "Demo"
 git push heroku master
 heroku open
 ```
-
+#### HyperMesh Push notifications config
 
 ```ruby
 #config/initializers/hyper_mesh.rb
@@ -848,6 +916,13 @@ end
 
 ```
 heroku local web
+```
+
+Browse http://localhost:5000 with 2 different browsers and add a new Event record and see if it's pushed on the 2 browsers.
+
+#### Push and test HEROKU server
+
+```
 git add .
 git commit -m "Demo"
 git push heroku master
