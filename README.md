@@ -11,7 +11,7 @@ This tutorial is the third chapter of a serie containing 4 chapters :
 
 For more information : [HyperLoop Web site](http://ruby-hyperloop.io/)
 
-### INTRODUCTION
+## INTRODUCTION
 
 This tutorial is a very detailed list of commands and files modification to achieve a complete working deployment of the **Hyperloop showcase** on a **HEROKU** Server.
 
@@ -23,7 +23,7 @@ The **Hyperloop showcase** has already been deployed successfully on a classic i
 [http://http://hyperloop-showcase.pixagency.com](http://hyperloop-showcase.pixagency.com)
 
 
-### DEPLOYING TUTORIAL
+## DEPLOYING TUTORIAL
 
 
 #### Setup of a new HEROKU app
