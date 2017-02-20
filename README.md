@@ -1,4 +1,15 @@
-# Deploying HyperLoop Showcase on HEROKU 
+# Deploying HyperLoop Showcase on HEROKU (Debug way)
+
+## Preamble
+
+This tutorial is the third chapter of a serie containing 4 chapters :
+
++ Chapter 1 : [Hyperloop Showcase](https://github.com/fzingg/hyperloop-showcase) 
++ Chapter 2 : [Hyperloop Showcase Template](https://github.com/fzingg/hyperloop-showcase-template) 
++ Chapter 3 : [Hyperloop Showcase with HEROKU (Debug way)](https://github.com/fzingg/hyperloop-showcase-heroku) 
++ Chapter 4 : [Hyperloop Showcase with HEROKU (Fast way)](https://github.com/fzingg/hyperloop-showcase-template-heroku) 
+
+For more information : [HyperLoop Web site](http://ruby-hyperloop.io/)
 
 ### INTRODUCTION
 
