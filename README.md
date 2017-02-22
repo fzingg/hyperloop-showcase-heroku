@@ -1,32 +1,32 @@
-# Deploying HyperLoop Showcase on HEROKU (Debug way)
+# Deploying the Hyperloop Showcase App on Heroku (Debug way)
 
 ## Preamble
 
-This tutorial is the third chapter of a serie containing 4 chapters :
+This tutorial is the third in a series of four:
 
 + Chapter 1 : [Hyperloop Showcase](https://github.com/fzingg/hyperloop-showcase) 
 + Chapter 2 : [Hyperloop Showcase Template](https://github.com/fzingg/hyperloop-showcase-template) 
-+ Chapter 3 : [Hyperloop Showcase with HEROKU (Debug way)](https://github.com/fzingg/hyperloop-showcase-heroku) 
-+ Chapter 4 : [Hyperloop Showcase with HEROKU (Fast way)](https://github.com/fzingg/hyperloop-showcase-template-heroku) 
++ Chapter 3 : [Hyperloop Showcase with Heroku (Debug way)](https://github.com/fzingg/hyperloop-showcase-heroku) 
++ Chapter 4 : [Hyperloop Showcase with Heroku (Fast way)](https://github.com/fzingg/hyperloop-showcase-template-heroku) 
 
 For more information : [HyperLoop Web site](http://ruby-hyperloop.io/)
 
 ## INTRODUCTION
 
-This tutorial is a very detailed list of commands and files modification to achieve a complete working deployment of the **Hyperloop showcase** on a **HEROKU** Server.
+This tutorial is a very detailed list of commands and file modifications to achieve a working deployment of the **Hyperloop showcase** on a **Heroku** Server.
 
-Of course the **HEROKU** deployment can be faster but this tutorial allows programmers to check step by step where an error could happen.
+Of course the **Heroku** deployment can be faster, but this tutorial allows programmers to check step by step where an error could happen.
 
-The final **HEROKU** online result is here : [https://damp-harbor-10403.herokuapp.com](https://damp-harbor-10403.herokuapp.com)
+The final **Heroku** online result is here : [https://damp-harbor-10403.herokuapp.com](https://damp-harbor-10403.herokuapp.com)
 
-The **Hyperloop showcase** has already been deployed successfully on a classic independant VPS (Rails 5.01, Capistrano and Passenger) :
+The **Hyperloop showcase** has already been deployed successfully on a classic independent VPS (Rails 5.01, Capistrano and Passenger) :
 [http://http://hyperloop-showcase.pixagency.com](http://hyperloop-showcase.pixagency.com)
 
 
 ## DEPLOYING TUTORIAL
 
 
-#### Setup of a new HEROKU app
+#### Setup of a new Heroku app
 
 ```
 heroku login
@@ -36,7 +36,7 @@ heroku create
 git push heroku master
 heroku open
 ```
-The initial HEROKU app is coming with a Rails 4.x version. We are going to upgrade it to a Rails 5.0.1 version.
+The initial Heroku app is coming with a Rails 4.x version. We are going to upgrade it to a Rails 5.0.1 version.
 
 #### Upgrade to Rails 5.0.1
 
@@ -144,7 +144,7 @@ rm Gemfile.lock
 bundle install
 heroku local web
 ```
-Browse http://localhost:5000
+Browse to http://localhost:5000
 
 #### Update database config file
 
@@ -161,9 +161,9 @@ Browse http://localhost:5000
 bundle exec rake db:create db:migrate
 heroku local web
 ```
-Browse http://localhost:5000
+Refresh your browser or browse to http://localhost:5000 if not already open.
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 ```
 git add .
 git commit -m "Demo"
@@ -227,9 +227,9 @@ rails g hyperloop:component Home::Show
 ```
 heroku local web
 ```
-Browse http://localhost:5000
+Browse to http://localhost:5000
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 
 ```
 git add .
@@ -238,7 +238,7 @@ git push heroku master
 heroku open
 ```
 
-#### HYPERMESH Setup
+#### HyperMesh Setup
 
 ```
 #Gemfile
@@ -327,9 +327,9 @@ end
 ```
 heroku local web
 ```
-Browse http://localhost:5000
+Browse to http://localhost:5000
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 ```
 git add .
 git commit -m "Demo"
@@ -338,7 +338,7 @@ heroku open
 
 ```
 
-#### WEBPACK Setup
+#### Webpack Setup
 
 ```
 npm init
@@ -460,9 +460,9 @@ webpack
 heroku local web
 ```
 
-Browse http://localhost:5000
+Browse to http://localhost:5000
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 
 ```
 git add .
@@ -471,7 +471,7 @@ git push heroku master
 heroku open
 ```
 
-#### Reactplayer Component Config
+#### ReactPlayer Component Config
 
 ```
 npm install react-player --save
@@ -506,9 +506,9 @@ end
 heroku local web
 ```
 
-Browse http://localhost:5000
+Browse to http://localhost:5000
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 
 ```
 git add .
@@ -517,7 +517,7 @@ git push heroku master
 heroku open
 ```
 
-#### React Bootsptrap config
+#### React Bootstrap config
 
 ```
 npm install bootstrap react-bootstrap --save
@@ -553,9 +553,9 @@ webpack
 ```
 heroku local web
 ```
-Browse http://localhost:5000
+Browse to http://localhost:5000
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 
 ```
 git add .
@@ -677,9 +677,9 @@ end
 ```
 heroku local web
 ```
-Browse http://localhost:5000
+Browse to http://localhost:5000
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 
 ```
 git add .
@@ -713,7 +713,7 @@ heroku local web
 ```
 Browse http://localhost:5000
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 
 ```
 git add .
@@ -905,9 +905,9 @@ end
 heroku local web
 ```
 
-Browse http://localhost:5000
+Browse to http://localhost:5000
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 
 ```
 git add .
@@ -915,7 +915,7 @@ git commit -m "Demo"
 git push heroku master
 heroku open
 ```
-#### HyperMesh Push notifications config
+#### HyperMesh push notifications config
 
 ```ruby
 #config/initializers/hyper_mesh.rb
@@ -929,9 +929,9 @@ end
 heroku local web
 ```
 
-Browse http://localhost:5000 with 2 different browsers and add a new Event record and see if it's pushed on the 2 browsers.
+Browse to http://localhost:5000 with 2 different browsers and add a new Event.  Both browsers should update the view with this new Event.
 
-#### Push and test HEROKU server
+#### Push and test Heroku server
 
 ```
 git add .
