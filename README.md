@@ -26,7 +26,7 @@ The **Hyperloop showcase** has already been deployed successfully on a classic i
 ## DEPLOYING TUTORIAL
 
 
-#### Setup of a new Heroku app
+#### Set up a new Heroku app
 
 ```
 heroku login
