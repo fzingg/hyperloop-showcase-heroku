@@ -161,7 +161,7 @@ Browse to http://localhost:5000
 bundle exec rake db:create db:migrate
 heroku local web
 ```
-Browse to http://localhost:5000 if not already open.
+Browse to http://localhost:5000
 
 #### Push and test Heroku server
 ```
