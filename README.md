@@ -15,9 +15,9 @@ For more information : [HyperLoop Web site](http://ruby-hyperloop.io/)
 
 This tutorial is a very detailed list of commands and file modifications to achieve a working deployment of the **Hyperloop showcase** on a **Heroku** Server.
 
-Of course the **Heroku** deployment can be faster, but this tutorial allows programmers to check step by step where an error could happen.
+Of course the **Heroku** deployment could be faster, but this tutorial allows programmers to check step by step where an error could happen.
 
-The final **Heroku** online result is here : [https://damp-harbor-10403.herokuapp.com](https://damp-harbor-10403.herokuapp.com)
+The live **Heroku** demo deployment is here : [https://damp-harbor-10403.herokuapp.com](https://damp-harbor-10403.herokuapp.com)
 
 The **Hyperloop showcase** has already been deployed successfully on a classic independent VPS (Rails 5.01, Capistrano and Passenger) :
 [http://http://hyperloop-showcase.pixagency.com](http://hyperloop-showcase.pixagency.com)
