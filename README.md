@@ -4,12 +4,12 @@
 
 This tutorial is the third in a series of four:
 
-+ Chapter 1 : [Hyperloop Showcase](https://github.com/fzingg/hyperloop-showcase) 
-+ Chapter 2 : [Hyperloop Showcase Template](https://github.com/fzingg/hyperloop-showcase-template) 
-+ Chapter 3 : [Hyperloop Showcase with Heroku (Debug way)](https://github.com/fzingg/hyperloop-showcase-heroku) 
-+ Chapter 4 : [Hyperloop Showcase with Heroku (Fast way)](https://github.com/fzingg/hyperloop-showcase-template-heroku) 
++ Chapter 1: [Hyperloop Showcase](https://github.com/fzingg/hyperloop-showcase) 
++ Chapter 2: [Hyperloop Showcase Template](https://github.com/fzingg/hyperloop-showcase-template) 
++ Chapter 3: [Hyperloop Showcase with Heroku (Debug way)](https://github.com/fzingg/hyperloop-showcase-heroku) 
++ Chapter 4: [Hyperloop Showcase with Heroku (Fast way)](https://github.com/fzingg/hyperloop-showcase-template-heroku) 
 
-For more information : [HyperLoop Web site](http://ruby-hyperloop.io/)
+For more information: [HyperLoop Web site](http://ruby-hyperloop.io/)
 
 ## INTRODUCTION
 
